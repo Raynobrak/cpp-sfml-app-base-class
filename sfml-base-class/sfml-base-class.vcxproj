@@ -129,10 +129,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ExampleApplication.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SFMLApplicationBase.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ExampleApplication.h" />
     <ClInclude Include="SFMLApplicationBase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
