@@ -44,6 +44,10 @@ void SFMLApplicationBase::exitApplication() {
 	window_.close();
 }
 
+void SFMLApplicationBase::drawOnWindow(const sf::Drawable& d, const sf::RenderStates states) {
+	window_.draw(d, states);
+}
+
 void SFMLApplicationBase::handleEvent(sf::Event& event) {}
 
 void SFMLApplicationBase::render() {

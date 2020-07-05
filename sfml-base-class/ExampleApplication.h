@@ -3,6 +3,7 @@
 #include "SFMLApplicationBase.h"
 
 #include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/CircleShape.hpp>
 
 class ExampleApplication : public SFMLApplicationBase {
 public:
@@ -13,6 +14,7 @@ private:
 	void update(float dt) override;
 	void customRender() override;
 
+	std::vector<sf::CircleShape> circles_;
 	sf::RectangleShape shape_;
 	sf::Vector2f velocity_;
 };

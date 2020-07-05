@@ -10,6 +10,14 @@ ExampleApplication::ExampleApplication() {
 	shape_.setOrigin(shape_.getSize() / 2.f);
 	shape_.setPosition(getWindowSize() / 2.f);
 
+	sf::CircleShape baseCircle(30.f);
+	baseCircle.setPosition(10.f, 10.f);
+	circles_.push_back(baseCircle);
+	baseCircle.setPosition(200.f, 30.f);
+	circles_.push_back(baseCircle);
+	baseCircle.setPosition(30.f, 150.f);
+	circles_.push_back(baseCircle);
+
 	velocity_ = { 0.f, 0.f };
 }
 
@@ -49,5 +57,7 @@ void ExampleApplication::update(float dt) {
 }
 
 void ExampleApplication::customRender() {
-	window_.draw(shape_);
+	drawOnWindow(shape_);
+	for (const auto& c : circles_)
+		drawOnWindow(c);
 }

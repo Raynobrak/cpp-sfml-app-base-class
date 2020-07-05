@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Window/Event.hpp>
 #include <string>
 
@@ -32,12 +33,14 @@ protected:
 	sf::Vector2f getMousePosOnWindow() const;
 	sf::Vector2f getWindowSize() const;
 	void exitApplication();
+	void drawOnWindow(const sf::Drawable& d, const sf::RenderStates states = sf::RenderStates::Default);
 
 	sf::RenderWindow window_;
 private: 
 	virtual void handleEvent(sf::Event& event);
 	void render();
 	virtual void customRender();
+	
 private:
 	sf::Color windowClearColor_;
 	float fixedTimeStep_;
